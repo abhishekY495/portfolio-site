@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+:root {
+    --primary-color: #483efe;
+    --secondary-color: #0a00d2;
+    --off-white: #e6e6e6;
+    --dark-gray: #6b7280;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+
+
+/* Navbar */
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+    background-color: var(--primary-color);
+}
+.nav-heading {
+    font-size: 2rem;
+    margin: 0;
+    font-weight: bold;
+}
+.nav-links {
+    padding-left: 2rem;
+}
+.nav-links .link {
+    font-size: 1.3rem;
+    padding: 0.3rem 1rem;
+}
+.link-active {
+    background-color: var(--secondary-color);
+    border-radius: 0.5rem;
+}
+
+
+/* Main */
+main {
+    text-align: center;
+}
+.hero-image {
+    max-width: 80%;
+    width: 350px;
+    padding: 1rem 0;
+}
+.main-heading {
+    font-size: 2rem;
+}
+.main-heading span {
+    text-decoration: underline 5px solid var(--primary-color);
+}
+
+
+/* Technology section images */
+.technology-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.8rem;
+    padding-bottom: 0.5rem;
+}
+.technology-images img {
+    width: 2rem;
+}
+.technology-images img:nth-child(3) {
+    width: 2.5rem;
+}
+
+
+/* Sections */
+section {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+section:nth-child(odd) {
+    background-color: var(--off-white);
+}
+.section-heading {
+    font-size: 2rem;
+    font-weight: 500;
+    padding-bottom: 0.5rem;
+}
+.section-info {
+    letter-spacing: 0.5px;
+    max-width: 600px;
+    margin: auto;
+    padding-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+.section-link {
+    padding: 0.5rem 1.5rem;
+    background-color: var(--primary-color);
+    border-radius: 0.5rem;
+}
+
+
+/* Footer */
+footer {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    padding: 1.5rem;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+}
+.social-icons {
+    width: 2rem;
+}
