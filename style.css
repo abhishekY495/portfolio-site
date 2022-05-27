@@ -80,7 +80,7 @@ main {
 
 /* Sections */
 section {
-    padding: 1rem;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -120,4 +120,17 @@ footer {
 }
 .social-icons {
     width: 2rem;
+}
+
+
+/* Media queries */
+@media (max-width:900px) {
+    .nav-bar {
+        flex-direction: column;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    .nav-links {
+        padding-top: 0.5rem;
+    }
 }
