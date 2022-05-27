@@ -1,0 +1,30 @@
+:root {
+    --primary-color: #483efe;
+}
+
+.main-heading {
+    margin: 0.8rem;
+}
+
+.hero-image {
+    padding: 0;
+    padding-bottom: 0.8rem;
+}
+
+.section-heading span {
+    font-weight: bold;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.section-link-alternate {
+    border: solid 2px var(--primary-color);
+    background-color: white;
+    color: var(--primary-color);
+    font-weight: 600;
+}
