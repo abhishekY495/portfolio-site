@@ -1,10 +1,7 @@
 # Portfolio Site
 
-Hello 👋, Welcome to my portfolio where i showcase my skills.
+Hello 👋, Welcome to my portfolio where i showcase my skills, projects and other cool stuff.
 
-Skills i know so far - 
+Built using Vanilla JS.
 
-1. HTML
-2. CSS
-3. JavaScript
-4. Github
+![My-website](./images/site.png)
