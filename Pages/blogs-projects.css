@@ -34,3 +34,29 @@
     background-color: var(--primary-color);
     border-radius: 0.5rem;
 }
+
+@media (max-width:740px) {
+    .section-heading {
+        font-size: 1.5rem;
+        padding-bottom: 0.2rem;
+        line-height: 2rem;
+    }
+    .section-live-link {
+        padding: 0.3rem 1rem;
+    }
+    .section-code-link {
+        padding: 0.4rem 1rem;
+    }
+    .project {
+        padding: 2rem 0.5rem;
+    }
+}
+
+@media (max-width:400px) {
+    .section-info {
+        font-size: 1rem;
+    }
+    .section-code-link, .section-live-link {
+        font-size: 0.95rem;
+    }
+}
