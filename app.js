@@ -1,12 +1,20 @@
-const mainHeading = document.querySelector('.main-heading');
+const heroHeading = document.querySelector('.hero-heading');
 
 const windowSize = window.matchMedia('(max-width:425px)');
-function changeMainHeadingText(windowSize) {
+function changeHeroHeadingText(windowSize) {
     if (windowSize.matches) {
-        mainHeading.innerHTML = 'Abhishek 👇 <span class="profession break">Web Developer</span>';
+        heroHeading.innerHTML = 'Abhishek 👇 <span class="profession break">Web Developer</span>';
     } else {
-        mainHeading.innerHTML = 'Abhishek × <span class="profession">Web Developer</span>';
+        heroHeading.innerHTML = 'Abhishek → <span class="profession">Web Developer</span>';
     }
 }
-windowSize.addListener(changeMainHeadingText);
-changeMainHeadingText(windowSize);
+windowSize.addListener(changeHeroHeadingText);
+changeHeroHeadingText(windowSize);
+
+// Toggle Button
+const toggleBtn = document.querySelector('.toggle-button');
+const navBarLinks = document.querySelector('.nav-links');
+
+toggleBtn.addEventListener('click',  () => {
+    navBarLinks.classList.toggle('nav-links-active');
+});
