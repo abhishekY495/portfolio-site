@@ -1,5 +1,6 @@
 :root {
     --primary-color: #483efe;
+    --blog-color: #ffb93f;
 }
 
 .main-heading {
@@ -32,6 +33,13 @@
 .section-code-link {
     padding: 0.5rem 1.5rem;
     background-color: var(--primary-color);
+    border-radius: 0.5rem;
+}
+.section-blog-links {
+    background-color: var(--blog-color);
+    color: black;
+    font-weight: 500;
+    padding: 0.5rem 1.8rem;
     border-radius: 0.5rem;
 }
 
