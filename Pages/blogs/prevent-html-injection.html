@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Preventing HTML injection on your site</title>
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="./prevent-html-injection.css" />
+    <script src="../blogs-project.js" defer></script>
+  </head>
+  <body>
+    <nav class="nav-bar">
+      <a href="../../index.html" class="nav-heading">Abhishake21</a>
+      <a href="#" class="toggle-button">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </a>
+      <div class="nav-links">
+        <a class="link" href="../../index.html">Home</a>
+        <a class="link" href="../projects/projects.html">Projects</a>
+        <a class="link link-active" href="../blogs/blogs.html">Blogs</a>
+        <a class="link" href="#footer">Contact</a>
+      </div>
+    </nav>
+
+    <main>
+      <h2 class="main-heading">Preventing HTML injection on your site</h2>
+      <img class="hero-image" src="../../images/blog-images/html-injection.jpg" alt="HTML Injection"/>
+
+      <div class="divider"></div>
+
+      <p class="section-info">
+        First, what is <span>HTML Injection ?</span> It is an attack that allows the injection of HTML code. 
+        When an application <span>does not properly handle user supplied data</span>, an attacker can supply valid HTML code, 
+        typically via a parameter value, and inject their own content into the page. It is similar to Cross-site Scripting (XSS). 
+        In XSS the attacker can inject and execute Javascript code instead of HTML.
+        <br><br>
+
+        To demo this, I have created a site where you can try HTML Injection. 
+        Visit <a class="demo-site-link" href="https://html-injection-demo.netlify.app/" target="_blank">this website</a>. 
+        It has an input box where a user can enter anything.<br><br>
+
+        Now try entering a HTML code. For eg - <code>&lt;h1 style="font-size:5rem"&gt;Hello World&lt;/h1&gt;</code> and hit Submit.
+        You will see a Big <span><code>Hello World</code></span> on the site. Thats HTML injection right there. <br><br>
+
+        Now you might be thinking it's just a simple text. Now try adding different HTML tags instead of <code>&lt;h1&gt;</code>.
+        For eg try adding.<br><br>
+
+        <span>Adds an image of IronMan</span><br><code>&lt;img src="files\pic.jpg"&gt;</code><br><br>
+        <span>Adds a video that will autoplay</span><br><code>&lt;video src="files\fifa.mp4" muted loop autoplay&gt;&lt;/video&gt;</code><br><br>
+        <span>Adds audio that will autoplay</span><br><code>&lt;audio src="files\song.mp3" controls autoplay unmuted loop&gt;&lt;/audio&gt;</code><br><br>
+        <span>Trigger an Alert</span><br><code>&lt;img src onerror=alert(1)&gt;</code><br><br>
+
+        <span>Adds a link</span><br><code>&lt;a href="files\song.mp3" download&gt;⬜ Accept terms&lt;/a&gt;</code><br>
+        Now it looks like a checkbox once it is rendered but it's a square emoji and once you click, it will just download a song. 
+        But an attacker can put any file, which could be a virus or malware.
+        <br><br>
+
+        As you can see we can pretty much render anything we want and fool a user. Now, this is a simple site I made to show the vulnerability. <br><br>
+        Imagine, the input box was a comment box on Youtube. So you could render anything on a Youtube video just by commenting on it, 
+        and it stays forever. That is known as <span>Stored HTML injection</span>, 
+        meaning once you refresh the page the HTML code still stays there. 
+        On my demo site, you could just refresh the page and all rendered elements are gone.<br><br>
+
+        The Javascript code for the app looks like below. <br>
+        <img class="code1" src="../../images/blog-images/vulnerable-code.png" alt="vulnerable code">
+        <br>
+        Can you guess what needs to be changed in the code to fix it.
+
+        <br><br>
+
+        <span class="fix-heading">So what's the fix for it</span><br>
+
+        The fix is pretty simple. Use <span><code>innerText</code></span> instead of <span><code>innerHTML</code></span>. 
+        If you guessed it right then you are a really good coder. Using <span><code>innerText</code></span> will convert all input 
+        into a string and will never render HTML code.
+        <br>
+
+        <img class="code2" src="../../images/blog-images/fix.png" alt="fixed code">
+        <br>
+
+        You can check this by visiting 
+        <a class="demo-site-link" href="https://html-injection-demo.netlify.app/" target="_blank">my website</a> again and clicking on the 
+        <span>Fix here</span> button which will take you to a page with the same layout but I use <span><code>innerText</code></span> instead 
+        of <span><code>innerHTML</code></span>.
+        <br>
+
+        Now try entering the above HTML codes in the input box and check the output. It's all normal Text.
+        <br><br> 
+
+        And that is how you fix HTML injection on your website. It's really easy to forget such small things when writing code. 
+        It is really important to consider writing Secure code with Clean code as well. Hope you learned something new and thanks 
+        for reading.<br>
+
+      </p>
+    </main>
+
+    <footer id="footer" class="social-links">
+      <a href="https://github.com/abhishake21" target="_blank"><img class="social-icons" src="../../images/social-icons/github.svg" alt="github" /></a>
+      <a href="https://twitter.com/abhishake21" target="_blank"><img class="social-icons" src="../../images/social-icons/twitter.svg" alt="twitter" /></a>
+      <a href="https://www.linkedin.com/in/abhishake12/" target="_blank"><img class="social-icons" src="../../images/social-icons/linkedin.svg" alt="linkedin" /></a>
+    </footer>
+  </body>
+</html>
